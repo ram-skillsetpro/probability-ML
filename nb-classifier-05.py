@@ -34,4 +34,9 @@ y_pred = model.predict(X_test_vec)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy of Naive Bayes classifier: {accuracy}")
 
+# Example prediction
+new_email = ["Congratulations, claim your free prize now"]
+new_email_transformed = vectorizer.transform(new_email)
+prediction = model.predict(new_email_transformed)
+print(f"Prediction: {'Spam' if prediction[0] == 1 else 'Not Spam'}")
 
